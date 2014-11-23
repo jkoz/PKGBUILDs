@@ -1,17 +1,18 @@
 # Maintainer: tait <phuoctaitp@gmail.com>
 
-_pkgname=dwm
+_pkgname=dmenu-scripts
 pkgname=${_pkgname}-git
-pkgver=7
+pkgver=6
 pkgrel=1
-pkgdesc="A dynamic window manager for X"
+pkgdesc='Dmenu scripts'
 arch=('i686' 'x86_64' 'armv7h' 'armv6h')
 url="https://github.com/jkoz/${_pkgname}"
 license=('MIT')
-depends=('libx11' 'libxinerama')
+depends=()
 makedepends=('git')
+optdepends=('urxvt: dmenu liked support' 'tmux: slmenu liked support' 'fzf: fuzzy command line')
 provides=("${_pkgname}")
-conflicts=("${_pkgname}")
+conflicts=("${_pkgname}" "slmenu" "dmenu")
 source=("git://github.com/jkoz/${_pkgname}.git")
 md5sums=('SKIP')
 
@@ -26,8 +27,7 @@ build() {
 }
 
 package() {
-  cd "$srcdir/$_pkgname"
-  make PREFIX=/usr DESTDIR=$pkgdir install
-  install -m644 -D LICENSE $pkgdir/usr/share/licenses/$pkgname/LICENSE
-  install -m644 -D README $pkgdir/usr/share/doc/$pkgname/README
+    cd "$srcdir/$_pkgname"
+    make PREFIX=/usr/local DESTDIR="$pkgdir" install
+    install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }

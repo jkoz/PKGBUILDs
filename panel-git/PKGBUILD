@@ -1,18 +1,17 @@
 # Maintainer: tait <phuoctaitp@gmail.com>
 
-_pkgname=slmenu
+_pkgname=panel
 pkgname=${_pkgname}-git
-pkgver=6
+pkgver=2
 pkgrel=1
-pkgdesc='Slmenu with extra features'
+pkgdesc='A lightweight panel'
 arch=('i686' 'x86_64' 'armv7h' 'armv6h')
 url="https://github.com/jkoz/${_pkgname}"
 license=('MIT')
-depends=()
+depends=('acpi')
 makedepends=('git')
-optdepends=('urxvt: dmenu liked support' 'tmux: slmenu liked support')
 provides=("${_pkgname}")
-conflicts=("${_pkgname}" "slmenu" "dmenu")
+conflicts=("${_pkgname}")
 source=("git://github.com/jkoz/${_pkgname}.git")
 md5sums=('SKIP')
 
@@ -28,6 +27,5 @@ build() {
 
 package() {
     cd "$srcdir/$_pkgname"
-    make PREFIX=/usr/local DESTDIR="$pkgdir" install
-    install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    make PREFIX=/usr DESTDIR="$pkgdir" install
 }

@@ -2,7 +2,7 @@
 
 _pkgname=dwm
 pkgname=${_pkgname}-git
-pkgver=7
+pkgver=9
 pkgrel=1
 pkgdesc="A dynamic window manager for X"
 arch=('i686' 'x86_64' 'armv7h' 'armv6h')

@@ -12,7 +12,7 @@ depends=()
 makedepends=('git')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}" "slmenu" "dmenu")
-source=("git://github.com/jkoz/${_pkgname}.git")
+source=("git://github.com/jkoz/${_pkgname}.git#branch=xft-config")
 md5sums=('SKIP')
 
 pkgver() {

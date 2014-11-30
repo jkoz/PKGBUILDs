@@ -1,6 +1,6 @@
 # Maintainer: tait <phuoctaitp@gmail.com>
 
-_pkgname=dmenu-scripts
+_pkgname=dmenu
 pkgname=${_pkgname}-git
 pkgver=6
 pkgrel=1
@@ -10,7 +10,6 @@ url="https://github.com/jkoz/${_pkgname}"
 license=('MIT')
 depends=()
 makedepends=('git')
-optdepends=('urxvt: dmenu liked support' 'tmux: slmenu liked support' 'fzf: fuzzy command line')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}" "slmenu" "dmenu")
 source=("git://github.com/jkoz/${_pkgname}.git")

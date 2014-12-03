@@ -1,10 +1,10 @@
 # Maintainer: tait <phuoctaitp@gmail.com>
 
-_pkgname=dmenu
+_pkgname=slock
 pkgname=${_pkgname}-git
-pkgver=6
+pkgver=1
 pkgrel=1
-pkgdesc='Dmenu scripts'
+pkgdesc='Suckless lock screen tool'
 arch=('i686' 'x86_64' 'armv7h' 'armv6h')
 url="https://github.com/jkoz/${_pkgname}"
 license=('MIT')
@@ -12,7 +12,7 @@ depends=()
 makedepends=('git')
 provides=("${_pkgname}")
 conflicts=("${_pkgname}")
-source=("git://github.com/jkoz/${_pkgname}.git#branch=xft-config")
+source=("git://github.com/jkoz/${_pkgname}.git")
 md5sums=('SKIP')
 
 pkgver() {
